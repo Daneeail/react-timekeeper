@@ -50,7 +50,7 @@ const LoginCard = () => {
     },
     validationSchema: validationSchema,
     onSubmit: () => {
-      history.push('/main')
+      history.push('/time-card')
     }
   });
 

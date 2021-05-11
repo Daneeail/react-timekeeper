@@ -50,6 +50,9 @@ const DrawerComponent = (props: any) => {
           {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </IconButton>
       </div>
+      <div>
+        Sidenav
+      </div>
     </Drawer>
   );
 };

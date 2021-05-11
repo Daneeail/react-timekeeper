@@ -1,17 +1,20 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Pages/Login/Login";
-import Main from "./Pages/Main/Main";
+import TimeCard from "./Pages/TimeCard/TimeCard";
+import ScheduleContext from "./Contexts/ScheduleContexts";
 
 const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/main">
-          <Main />
+        <Route path="/time-card">
+          <ScheduleContext.Provider value="testing">
+            <TimeCard />
+          </ScheduleContext.Provider>
         </Route>
-        <Route exact path="/login">
+        <Route path="/login">
           <Login />
         </Route>
         <Route path="/">
@@ -23,7 +26,6 @@ const App = () => {
 };
 
 export default App;
-
 
 // const authContext = React.createContext<any>(null);
 
