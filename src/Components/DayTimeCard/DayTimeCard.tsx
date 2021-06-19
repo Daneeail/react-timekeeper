@@ -33,15 +33,17 @@ const useStyles = makeStyles((theme: Theme) =>
 const DayTimeCard = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState('');
+  const [selectedValue, setSelectedValue] = React.useState<any>(null);
 
   function openScheduleDialog() {
     setOpen(true);
   }
 
-  function closeScheduleDialog(value: string) {
+  function closeScheduleDialog(value: any) {
     setOpen(false);
     setSelectedValue(value);
+
+    console.log(value);
   }
 
   return (

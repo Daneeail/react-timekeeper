@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
@@ -7,6 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import { Schedule } from '../../Models/Schedule';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export interface DialogProps {
   open: boolean;
   selectedValue: any;
-  onClose: (value: string) => void;
+  onClose: (value: any) => void;
 }
 
 
@@ -63,7 +64,7 @@ const ScheduleDialog = (props: DialogProps) => {
   }
 
   function addSchedule() {
-    console.log({nameField, descriptionField, notesField});
+    onClose({nameField, descriptionField, notesField});
   }
 
   return(
